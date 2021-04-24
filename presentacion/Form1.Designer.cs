@@ -38,6 +38,7 @@ namespace presentacion
             this.pbxPokemon = new System.Windows.Forms.PictureBox();
             this.btnDetalle = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnAgregarElemento = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPokemons)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPokemon)).BeginInit();
             this.SuspendLayout();
@@ -131,11 +132,23 @@ namespace presentacion
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             // 
+            // btnAgregarElemento
+            // 
+            this.btnAgregarElemento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnAgregarElemento.Location = new System.Drawing.Point(336, 303);
+            this.btnAgregarElemento.Name = "btnAgregarElemento";
+            this.btnAgregarElemento.Size = new System.Drawing.Size(172, 23);
+            this.btnAgregarElemento.TabIndex = 8;
+            this.btnAgregarElemento.Text = "Agregar Elemento";
+            this.btnAgregarElemento.UseVisualStyleBackColor = true;
+            this.btnAgregarElemento.Click += new System.EventHandler(this.btnAgregarElemento_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(785, 348);
+            this.Controls.Add(this.btnAgregarElemento);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnDetalle);
             this.Controls.Add(this.pbxPokemon);
@@ -167,6 +180,7 @@ namespace presentacion
         private System.Windows.Forms.PictureBox pbxPokemon;
         private System.Windows.Forms.Button btnDetalle;
         private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Button btnAgregarElemento;
     }
 }
 

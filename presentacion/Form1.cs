@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using dominio;
+using negocio;
 
 namespace presentacion
 {
@@ -23,16 +25,22 @@ namespace presentacion
         {
             frmPokemon agregar = new frmPokemon();
             agregar.ShowDialog();
+            cargarGrilla();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            cargarGrilla();
+        }
+
+        private void cargarGrilla()
+        {
             //listaPokemons = new List<Pokemon>();
             PokemonNegocio pokemonNegocio = new PokemonNegocio();
-            
+
             try
             {
-                listaPokemons = pokemonNegocio.listar2();
+                listaPokemons = pokemonNegocio.listar3();
                 dgvPokemons.DataSource = listaPokemons;
 
                 //Oculto Columnas de la grilla.
@@ -67,6 +75,12 @@ namespace presentacion
             //Pokemon elemento = (Pokemon)dgvPokemons.CurrentRow.DataBoundItem;
             //MessageBox.Show(elemento.Nombre);
             
+        }
+
+        private void btnAgregarElemento_Click(object sender, EventArgs e)
+        {
+            frmElemento elemento = new frmElemento();
+            elemento.ShowDialog();
         }
     }
 }

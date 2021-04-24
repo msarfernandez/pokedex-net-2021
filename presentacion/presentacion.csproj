@@ -46,13 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Elemento.cs" />
-    <Compile Include="FichaTecnica.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmElemento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmElemento.Designer.cs">
+      <DependentUpon>frmElemento.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPokemon.cs">
       <SubType>Form</SubType>
@@ -60,12 +64,13 @@
     <Compile Include="frmPokemon.Designer.cs">
       <DependentUpon>frmPokemon.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pokemon.cs" />
-    <Compile Include="PokemonNegocio.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmElemento.resx">
+      <DependentUpon>frmElemento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPokemon.resx">
       <DependentUpon>frmPokemon.cs</DependentUpon>
@@ -94,6 +99,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="POKEMON_DB_Script.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\dominio\dominio.csproj">
+      <Project>{7f9bfbec-595d-4651-bcb1-d01985ba7a28}</Project>
+      <Name>dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\negocio\negocio.csproj">
+      <Project>{889adc19-d401-4b3b-b719-dbd3cc800d8d}</Project>
+      <Name>negocio</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

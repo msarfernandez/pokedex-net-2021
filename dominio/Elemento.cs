@@ -4,14 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace presentacion
+namespace dominio
 {
-    class Elemento
+    public class Elemento
     {
+        public int Id { get; set; }
         public string Nombre { get; set; }
 
         public Elemento(string nombre)
         {
+            Nombre = nombre;
+        }
+
+        public Elemento(int id, string nombre)
+        {
+            Id = id;
             Nombre = nombre;
         }
 

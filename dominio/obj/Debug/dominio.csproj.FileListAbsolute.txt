@@ -1,0 +1,6 @@
+C:\Users\Max\source\repos\Pokedex2021\dominio\bin\Debug\dominio.dll
+C:\Users\Max\source\repos\Pokedex2021\dominio\bin\Debug\dominio.pdb
+C:\Users\Max\source\repos\Pokedex2021\dominio\obj\Debug\dominio.csprojAssemblyReference.cache
+C:\Users\Max\source\repos\Pokedex2021\dominio\obj\Debug\dominio.csproj.CoreCompileInputs.cache
+C:\Users\Max\source\repos\Pokedex2021\dominio\obj\Debug\dominio.dll
+C:\Users\Max\source\repos\Pokedex2021\dominio\obj\Debug\dominio.pdb

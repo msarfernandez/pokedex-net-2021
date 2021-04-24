@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace presentacion
+namespace dominio
 {
-    class FichaTecnica
+    public class FichaTecnica
     {
         //Altura, Peso, Categoria (Clase), Lista Habilidad (Clase)
     }

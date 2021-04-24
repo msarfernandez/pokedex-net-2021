@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using negocio;
+using dominio;
 
 namespace presentacion
 {
@@ -32,7 +34,38 @@ namespace presentacion
 
         private void frmPokemon_Load(object sender, EventArgs e)
         {
+            ElementoNegocio elementoNegocio = new ElementoNegocio();
 
+            try
+            {
+                cboTipo.DataSource = elementoNegocio.listar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            Pokemon nuevo = new Pokemon();
+            PokemonNegocio pokemonNegocio = new PokemonNegocio();
+            try
+            {
+                nuevo.Nombre = txtNombre.Text;
+                nuevo.Descripcion = txtDescripcion.Text;
+                nuevo.Numero = (int)numNumero.Value;
+                nuevo.UrlImagen = txtUrlImagen.Text;
+                nuevo.Tipo = (Elemento)cboTipo.SelectedItem;
+
+                pokemonNegocio.agregar(nuevo);
+                MessageBox.Show("agregado sin problema");
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

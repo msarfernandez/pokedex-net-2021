@@ -1,0 +1,9 @@
+C:\Users\Max\source\repos\Pokedex2021\negocio\bin\Debug\negocio.dll
+C:\Users\Max\source\repos\Pokedex2021\negocio\bin\Debug\negocio.pdb
+C:\Users\Max\source\repos\Pokedex2021\negocio\bin\Debug\dominio.dll
+C:\Users\Max\source\repos\Pokedex2021\negocio\bin\Debug\dominio.pdb
+C:\Users\Max\source\repos\Pokedex2021\negocio\obj\Debug\negocio.csprojAssemblyReference.cache
+C:\Users\Max\source\repos\Pokedex2021\negocio\obj\Debug\negocio.csproj.CoreCompileInputs.cache
+C:\Users\Max\source\repos\Pokedex2021\negocio\obj\Debug\negocio.csproj.CopyComplete
+C:\Users\Max\source\repos\Pokedex2021\negocio\obj\Debug\negocio.dll
+C:\Users\Max\source\repos\Pokedex2021\negocio\obj\Debug\negocio.pdb
