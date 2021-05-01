@@ -104,6 +104,7 @@ namespace presentacion
             this.txtUrlImagen.Name = "txtUrlImagen";
             this.txtUrlImagen.Size = new System.Drawing.Size(144, 20);
             this.txtUrlImagen.TabIndex = 3;
+            this.txtUrlImagen.TextChanged += new System.EventHandler(this.txtUrlImagen_TextChanged);
             // 
             // txtDescripcion
             // 
@@ -114,6 +115,7 @@ namespace presentacion
             // 
             // cboTipo
             // 
+            this.cboTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTipo.FormattingEnabled = true;
             this.cboTipo.Location = new System.Drawing.Point(114, 171);
             this.cboTipo.Name = "cboTipo";
@@ -152,6 +154,7 @@ namespace presentacion
             this.pbxPokemon.Location = new System.Drawing.Point(304, 27);
             this.pbxPokemon.Name = "pbxPokemon";
             this.pbxPokemon.Size = new System.Drawing.Size(246, 225);
+            this.pbxPokemon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxPokemon.TabIndex = 13;
             this.pbxPokemon.TabStop = false;
             // 

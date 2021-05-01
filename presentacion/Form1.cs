@@ -21,13 +21,7 @@ namespace presentacion
             InitializeComponent();
         }
 
-        private void btnAgregar_Click(object sender, EventArgs e)
-        {
-            frmPokemon agregar = new frmPokemon();
-            agregar.ShowDialog();
-            cargarGrilla();
-        }
-
+        
         private void Form1_Load(object sender, EventArgs e)
         {
             cargarGrilla();
@@ -42,13 +36,8 @@ namespace presentacion
             {
                 listaPokemons = pokemonNegocio.listar3();
                 dgvPokemons.DataSource = listaPokemons;
-
-                //Oculto Columnas de la grilla.
-                //Puedo poner el indice de la columna o el nombre de la propiedad.
-                dgvPokemons.Columns["Ficha"].Visible = false;
-                dgvPokemons.Columns["Descripcion"].Visible = false;
-                dgvPokemons.Columns["UrlImagen"].Visible = false;
-                dgvPokemons.Columns["Evolucion"].Visible = false;
+                ocultarColumnas();
+                
 
                 RecargarImg(listaPokemons[0].UrlImagen);
             }
@@ -63,6 +52,16 @@ namespace presentacion
             Pokemon seleccionado = (Pokemon)dgvPokemons.CurrentRow.DataBoundItem;
             RecargarImg(seleccionado.UrlImagen);
         }
+        private void ocultarColumnas()
+        {
+            //Oculto Columnas de la grilla.
+            //Puedo poner el indice de la columna o el nombre de la propiedad.
+            dgvPokemons.Columns["Id"].Visible = false;
+            dgvPokemons.Columns["Ficha"].Visible = false;
+            dgvPokemons.Columns["Descripcion"].Visible = false;
+            dgvPokemons.Columns["UrlImagen"].Visible = false;
+            dgvPokemons.Columns["Evolucion"].Visible = false;
+        }
 
         private void RecargarImg(string img)
         {
@@ -71,16 +70,69 @@ namespace presentacion
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            //Explicacion de seleccion, no va a ir acá-
-            //Pokemon elemento = (Pokemon)dgvPokemons.CurrentRow.DataBoundItem;
-            //MessageBox.Show(elemento.Nombre);
-            
+            Pokemon seleccionado = (Pokemon)dgvPokemons.CurrentRow.DataBoundItem;
+            frmPokemon modificar = new frmPokemon(seleccionado);
+            modificar.ShowDialog();
+            cargarGrilla();
+        }
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            frmPokemon agregar = new frmPokemon();
+            agregar.ShowDialog();
+            cargarGrilla();
         }
 
         private void btnAgregarElemento_Click(object sender, EventArgs e)
         {
             frmElemento elemento = new frmElemento();
             elemento.ShowDialog();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            Pokemon seleccionado = (Pokemon)dgvPokemons.CurrentRow.DataBoundItem;
+            PokemonNegocio negocio = new PokemonNegocio();
+            try
+            {
+                if (MessageBox.Show("Estás seguro de eliminarlo?", "Eliminandooo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    negocio.eliminar(seleccionado.Id);
+                    cargarGrilla();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            busqueda();
+        }
+
+        private void txtFiltro_KeyUp(object sender, KeyEventArgs e)
+        {
+            busqueda();
+        }
+
+        private void busqueda()
+        {
+            //txtFiltro
+            List<Pokemon> listaFiltrada;
+            if (txtFiltro.Text != "")
+            {
+                listaFiltrada = listaPokemons.FindAll(PEPE => PEPE.Nombre.ToUpper().Contains(txtFiltro.Text.ToUpper()) || PEPE.Tipo.Nombre.ToUpper().Contains(txtFiltro.Text.ToUpper()));
+                dgvPokemons.DataSource = null;
+                dgvPokemons.DataSource = listaFiltrada;
+            }
+            else
+            {
+                dgvPokemons.DataSource = null;
+                dgvPokemons.DataSource = listaPokemons;
+            }
+
+            ocultarColumnas();
         }
     }
 }

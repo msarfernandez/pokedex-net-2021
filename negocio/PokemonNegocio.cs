@@ -10,6 +10,7 @@ namespace negocio
 {
     public class PokemonNegocio
     {
+        private AccesoDatos datos;
 
         public List<Pokemon> listar()
         {
@@ -117,12 +118,47 @@ namespace negocio
 
         public void modificar(Pokemon modificar)
         {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("update POKEMONS set Nombre = @nombre, Descripcion = @descripcion, UrlImagen = @urlImagen, Numero = @numero, IdTipo = @idTipo, IdDebilidad = 1 Where Id = @id");
+                datos.setearParametro("@nombre", modificar.Nombre);
+                datos.setearParametro("@descripcion", modificar.Descripcion);
+                datos.setearParametro("@urlImagen", modificar.UrlImagen);
+                datos.setearParametro("@numero", modificar.Numero);
+                datos.setearParametro("@idTipo", modificar.Tipo.Id);
+                datos.setearParametro("@id", modificar.Id);
 
+                datos.ejectutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
         }
 
         public void eliminar(int id)
         {
-
+            datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("Delete From POKEMONS Where Id = " + id);
+                datos.ejectutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+                datos = null;
+            }
         }
 
         public List<Pokemon> listar3()
@@ -132,22 +168,26 @@ namespace negocio
 
             try
             {
-                datos.setearConsulta("select Numero, Nombre, P.Descripcion, UrlImagen, T.Descripcion Tipo, D.Descripcion Debilidad from POKEMONS P, ELEMENTOS T, ELEMENTOS D Where P.IdTipo = T.Id and P.IdDebilidad = D.Id");
+                datos.setearConsulta("select P.Id, Numero, Nombre, P.Descripcion, UrlImagen, T.Descripcion Tipo, D.Descripcion Debilidad, T.Id IdTipo, D.Id IdDebilidad from POKEMONS P, ELEMENTOS T, ELEMENTOS D Where P.IdTipo = T.Id and P.IdDebilidad = D.Id");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
                 {
                     Pokemon aux = new Pokemon();
+                    aux.Id = (int)datos.Lector["Id"];
                     aux.Numero = (int)datos.Lector["Numero"];
                     aux.Nombre = (string)datos.Lector["Nombre"];
-                    aux.Descripcion = datos.Lector.GetString(2);
+                    aux.Descripcion = datos.Lector.GetString(3);
                     aux.UrlImagen = (string)datos.Lector["UrlImagen"];
+
 
                     //aux.Tipo = new Elemento("");
                     //aux.Tipo.Nombre = (string)lector["Tipo"];
 
                     aux.Tipo = new Elemento((string)datos.Lector["Tipo"]);
+                    aux.Tipo.Id = (int)datos.Lector["IdTipo"];
                     aux.Debilidad = new Elemento((string)datos.Lector["Debilidad"]);
+                    aux.Debilidad.Id = (int)datos.Lector["IdDebilidad"];
 
                     lista.Add(aux);
                 }
