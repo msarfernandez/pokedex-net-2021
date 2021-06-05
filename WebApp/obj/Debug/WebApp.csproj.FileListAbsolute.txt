@@ -53,15 +53,19 @@ C:\Users\Max\source\repos\Pokedex2021\WebApp\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\Max\source\repos\Pokedex2021\WebApp\bin\Antlr3.Runtime.dll
 C:\Users\Max\source\repos\Pokedex2021\WebApp\bin\AspNet.ScriptManager.bootstrap.dll
 C:\Users\Max\source\repos\Pokedex2021\WebApp\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\Max\source\repos\Pokedex2021\WebApp\bin\dominio.dll
 C:\Users\Max\source\repos\Pokedex2021\WebApp\bin\Microsoft.AspNet.FriendlyUrls.dll
 C:\Users\Max\source\repos\Pokedex2021\WebApp\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
 C:\Users\Max\source\repos\Pokedex2021\WebApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\Max\source\repos\Pokedex2021\WebApp\bin\Microsoft.ScriptManager.MSAjax.dll
 C:\Users\Max\source\repos\Pokedex2021\WebApp\bin\Microsoft.ScriptManager.WebForms.dll
 C:\Users\Max\source\repos\Pokedex2021\WebApp\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Max\source\repos\Pokedex2021\WebApp\bin\negocio.dll
 C:\Users\Max\source\repos\Pokedex2021\WebApp\bin\Newtonsoft.Json.dll
 C:\Users\Max\source\repos\Pokedex2021\WebApp\bin\System.Web.Optimization.dll
 C:\Users\Max\source\repos\Pokedex2021\WebApp\bin\WebGrease.dll
+C:\Users\Max\source\repos\Pokedex2021\WebApp\bin\dominio.pdb
+C:\Users\Max\source\repos\Pokedex2021\WebApp\bin\negocio.pdb
 C:\Users\Max\source\repos\Pokedex2021\WebApp\bin\System.Web.Optimization.xml
 C:\Users\Max\source\repos\Pokedex2021\WebApp\bin\Newtonsoft.Json.xml
 C:\Users\Max\source\repos\Pokedex2021\WebApp\bin\Antlr3.Runtime.pdb
@@ -72,7 +76,3 @@ C:\Users\Max\source\repos\Pokedex2021\WebApp\obj\Debug\WebApp.csproj.CoreCompile
 C:\Users\Max\source\repos\Pokedex2021\WebApp\obj\Debug\WebApp.csproj.CopyComplete
 C:\Users\Max\source\repos\Pokedex2021\WebApp\obj\Debug\WebApp.dll
 C:\Users\Max\source\repos\Pokedex2021\WebApp\obj\Debug\WebApp.pdb
-C:\Users\Max\source\repos\Pokedex2021\WebApp\bin\dominio.dll
-C:\Users\Max\source\repos\Pokedex2021\WebApp\bin\negocio.dll
-C:\Users\Max\source\repos\Pokedex2021\WebApp\bin\dominio.pdb
-C:\Users\Max\source\repos\Pokedex2021\WebApp\bin\negocio.pdb

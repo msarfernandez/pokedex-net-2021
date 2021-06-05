@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Carrito.cs" />
     <Compile Include="Elemento.cs" />
     <Compile Include="FichaTecnica.cs" />
     <Compile Include="Pokemon.cs" />

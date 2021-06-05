@@ -34,6 +34,7 @@
                         <h5 class="card-title"><% = item.Nombre %></h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <a href="DetallePokemon.aspx?id=<% = item.Id %>" class="btn btn-primary">Ver Detalle</a>
+                        <a href="Favoritos.aspx?id=<% = item.Id %>&e=t"><i class="fas fa-heart"></i></a>
                     </div>
                 </div>
             </div>

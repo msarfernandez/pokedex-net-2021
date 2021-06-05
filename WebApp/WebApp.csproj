@@ -117,6 +117,7 @@
     <Content Include="DetallePokemon.aspx" />
     <Content Include="Error.aspx" />
     <Content Include="favicon.ico" />
+    <Content Include="Favoritos.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="FormularioPokemon.aspx" />
     <Content Include="Global.asax" />
@@ -209,6 +210,13 @@
     </Compile>
     <Compile Include="Error.aspx.designer.cs">
       <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Favoritos.aspx.cs">
+      <DependentUpon>Favoritos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Favoritos.aspx.designer.cs">
+      <DependentUpon>Favoritos.aspx</DependentUpon>
     </Compile>
     <Compile Include="FormularioPokemon.aspx.cs">
       <DependentUpon>FormularioPokemon.aspx</DependentUpon>
